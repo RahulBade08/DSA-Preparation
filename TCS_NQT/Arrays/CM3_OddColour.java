@@ -1,3 +1,7 @@
+// Approach - HashMap (Frequency count)
+// Time Complexity - O(n)
+// Space Complexity -O(n)
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -30,5 +34,16 @@ class CM3_OddColour{
         for(Map.Entry<Character, Integer> entry : map.entrySet()){
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
+
+        char ans = '\0';
+        for(int i=0; i<arr.length; i++){
+            if(map.get(arr[i]) % 2 == 1) {
+                ans = arr[i];
+                break;
+            }
+        }
+
+        if(ans == '\0') System.out.println("All are even");
+        else System.out.println(ans);
     }
 }
